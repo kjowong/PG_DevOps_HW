@@ -10,11 +10,11 @@ Flask application that returns a message depending on accept headers for a GET r
 * __language:__ Python 2.7
 * __Version Control:__ Git 1.9.1
 * __Package Management:__ Pip 1.5.4
-* __Framework:__: Flask 1.0.2
+* __Framework:__ Flask 1.0.2
 
 ## Install Environment
 
-Installed the following before running application (if not already installed):
+Install the following before running application (if not already installed):
 
 ### Update Packages
 ```
@@ -44,6 +44,11 @@ $ sudo pip install flask
 $ sudo git clone https://github.com/kjowong/PG_DevOps_HW.git
 ```
 
+### Go into the project 
+```
+$ cd PG_DevOps_HW
+```
+
 ### Start application 
 ```
 $ python app/request_app.py
@@ -61,9 +66,11 @@ $ python app/request_app.py debug
 $ python -m unittest -v tests.test_app
 ```
 
-### Test Application with on commandline
+### Test Application on commandline
 
-Accept Header with content type value application/json
+To test the functionality of the application, run the following `curl` commands while application is running in the background or another terminal window
+
+* Accept Header with content type value application/json:
 ```
 $ curl --header "Accept: application/json" http://0.0.0.0:5000/
 
@@ -71,7 +78,7 @@ $ curl --header "Accept: application/json" http://0.0.0.0:5000/
 {"message": "Good morning"}
 ```
 
-No Accept Header
+* No Accept Header:
 ```
 $ curl http://0.0.0.0:5000/
 
