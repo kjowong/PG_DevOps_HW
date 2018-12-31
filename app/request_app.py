@@ -41,7 +41,10 @@ def create_logger():
     timestamp = str(datetime.now())
     request_url = str(request.url)
     logging.basicConfig(level=logging.DEBUG)
-    logging.debug({timestamp: request_url})
+    if len(sys.argv) > 1 and sys.argv[1] == "debug":
+        logging.debug({timestamp: request_url})
+    else:
+        logging.info({timestamp: request_url})
 
 
 if __name__ == '__main__':
